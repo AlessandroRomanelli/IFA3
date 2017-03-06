@@ -36,6 +36,11 @@ body {
   font-family : "proxima-nova-soft";
 }
 
+br {
+  display: block;
+  margin: 10px 0;
+}
+
 #nav-header {
   position      : relative;
   top           : 25px;
@@ -117,11 +122,11 @@ body {
 }
 
 #title > h1 {
+  height         : 175px;
   margin         : 0;
   color          : white;
   text-transform : uppercase;
   font-size      : 6em;
-  height: 175px;
 }
 
 #title > p {
@@ -174,12 +179,12 @@ body {
 }
 
 #firstSlide {
-  position : relative;
-  height   : 700px;
   z-index    : 3;
+  position   : relative;
   position   : relative;
   top        : 0;
   width      : 100%;
+  height     : 700px;
   background : #0f3d00;
 }
 
@@ -200,15 +205,15 @@ body {
 }
 
 .history {
-  z-index          : 1;
-  font-size: 1.1em;
-  position         : relative;
+  z-index     : 1;
+  position    : relative;
   font-family : "KlinicSlab-Bold";
+  font-size   : 1.1em;
 }
 
 .history p {
-  font-size   : 1.25em;
-  color: white;
+  color     : white;
+  font-size : 1.25em;
 }
 
 .history a::after {
@@ -249,20 +254,20 @@ body {
 }
 
 #about1 {
-  z-index    : 3;
-  position   : relative;
-  top        : 0;
-  width      : 50%;
-  height     : 700px;
-  float      : left;
-  padding    : 200px 75px 50px;
+  z-index  : 3;
+  position : relative;
+  top      : 0;
+  width    : 50%;
+  height   : 700px;
+  float    : left;
+  padding  : 200px 0 50px 10%;
 }
-
 
 #about1 a:link {
   color           : #72ff44;
   border-bottom   : 1px dotted;
   text-decoration : none;
+  font-size       : 1.1em;
   transition      : .5s;
 }
 
@@ -275,36 +280,44 @@ body {
   border-bottom : 1px solid;
 }
 
-
 #about1 > p {
-  width       : 100%;
-  margin      : 15px 0;
-  text-align  : left;
+  width      : 100%;
+  margin     : 35px 0 0;
+  text-align : left;
 }
 
 #about1 > h2 {
-  text-align: left;
+  text-align : left;
+}
+
+#about1 > p:last-child::first-letter {
+  float: left;
+  margin: 5px 5px 5px 0;
+  padding: 5px 5px;
+  font-size: 2.3em;
+  border: 2px solid;
+  border-right: none;
 }
 
 #about2 {
-  z-index    : 5;
-  position   : absolute;
-  right      : 15%;
-  width      : 30%;
-  height     : 900px;
-  float      : right;
-  margin-top : -200px;
-  padding    : 50px 10px;
-  text-align : center;
+  z-index          : 5;
+  position         : absolute;
+  right            : 15%;
+  width            : 30%;
+  height           : 950px;
+  float            : right;
+  margin-top       : -200px;
+  padding          : 50px 10px;
+  border-radius    : 10px;
   background-color : #ffdc19;
-  border-radius: 10px 10px 0 0;
+  text-align       : center;
 }
 
 #about2::before {
-  border-radius: 10px 10px 0 0;
   z-index             : -1;
   content             : "";
   opacity             : .6;
+  border-radius       : 10px;
   background          : linear-gradient(
                           135deg,
                           rgba(0,0,0,.8) 15%,
@@ -324,7 +337,7 @@ body {
 }
 
 #about2 > p:first-child {
-  text-align: right;
+  text-align : right;
 }
 
 #about2 h2 {
@@ -342,17 +355,15 @@ body {
   width           : 85%;
   margin          : 50px auto;
   color           : white;
-  text-align      : center;
+  text-align      : left;
   font-family     : "KlinicSlab-Bold";
   font-size       : 1.25em;
   list-style-type : none;
 }
 
 #about2 > ul > li {
-  margin : 25px 0;
+  margin : 50px 0;
 }
-
-
 
 .backgroundimg::before {
   position : absolute;
@@ -466,38 +477,77 @@ body {
   background-position : 20% 33%;
 }
 
+#interval {
+  z-index    : 0;
+  position   : relative;
+  width      : 100%;
+  height     : 200px;
+  margin     : 10px 0;
+  background : darkblue;
+}
+
+#interval::before {
+  z-index             : -1;
+  content             : "";
+  opacity             : .8;
+  background          : linear-gradient(
+                          300deg,
+                          transparent 30%,
+                          rgba(0,0,0,.5) 90%
+                        ),
+                        url(
+                          "../images/background7.jpg"
+                        );
+  background-position : 80% 25%;
+  background-size     : cover;
+  filter              : contrast(150%) grayscale(75%);
+}
+
 #secondSlide {
-  z-index: 0;
-  height: 800px;
-  width: 100%;
-  position: relative;
-  background: darkred;
+  z-index    : 0;
+  position   : relative;
+  width      : 100%;
+  height     : 800px;
+  background : darkred;
 }
 
 #secondSlide::before {
-    z-index             : -1;
-    content             : "";
-    opacity             : .8;
-    background          : linear-gradient(
-                            300deg,
-                            transparent 30%,
-                            rgba(0,0,0,.5) 90%
-                          ),
-                          url(
-                            "../images/background6.jpg"
-                          );
-    background-position : left;
-    filter              : contrast(150%) grayscale(75%);
-  }
+  z-index             : -1;
+  content             : "";
+  opacity             : .7;
+  background          : linear-gradient(
+                          300deg,
+                          transparent 30%,
+                          rgba(0,0,0,.5) 90%
+                        ),
+                        url(
+                          "../images/background6.jpg"
+                        );
+  background-position : left;
+  filter              : contrast(150%) grayscale(75%);
 }
 
-#goals {
-  position: relative;
-  right: 0;
-  margin: auto;
-  width: 10%;
+#secondSlide div:first-child {
+  position: absolute;
+  margin: 0 0 0 10%;
+  top: 33%;
+  width: 70%;
 }
 
-#goals h2 {
-  font-size: 5em;
+#secondSlide div:first-child > h2 {
+  font-size: 7em;
+  line-height: 100px;
+}
+
+#secondSlide div:first-child > p:last-child {
+  width: 66%;
+}
+
+#secondSlide div:first-child > p:last-child::first-letter {
+  float: left;
+  margin: 5px 5px 5px 0;
+  padding: 5px 5px;
+  font-size: 2.5em;
+  border: 2px solid;
+  border-right: none;
 }
