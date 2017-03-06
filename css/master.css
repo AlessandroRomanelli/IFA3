@@ -29,16 +29,15 @@
 }
 
 body {
-  width       : 100%;
-  margin      : 0;
+  margin      : -16px 0 0 0;
   color       : rgb(200,200,200);
   background  : black;
   font-family : "proxima-nova-soft";
 }
 
 br {
-  display: block;
-  margin: 10px 0;
+  display : block;
+  margin  : 10px 0;
 }
 
 #nav-header {
@@ -112,8 +111,7 @@ br {
 #title {
   position    : absolute;
   top         : 50%;
-  left: 50%;
-  transform: translate(-50%, -75%);
+  left        : 50%;
   margin      : auto;
   text-align  : center;
   text-shadow : 0 10px 15px rgba(0, 0, 0, 0.5),
@@ -121,6 +119,7 @@ br {
                 0 3px 0 rgba(0, 0, 0, 0.85);
   font-family : "headliner";
   font-size   : 2em;
+  transform   : translate(-50%, -50%);
 }
 
 #title > h1 {
@@ -139,7 +138,6 @@ br {
 }
 
 #title::before {
-  transform: translate(-25%, -25%);
   z-index        : -1;
   content        : "1944";
   position       : absolute;
@@ -150,11 +148,12 @@ br {
   opacity        : .2;
   font-size      : 25em;
   letter-spacing : 10px;
+  transform      : translate(-25%, -15%);
 }
 
 #homescreen {
   position : relative;
-  top      : -16px;
+  top      : 0;
   right    : 0;
   bottom   : 0;
   left     : 0;
@@ -184,10 +183,10 @@ br {
 #firstSlide {
   z-index    : 3;
   position   : relative;
-  position   : relative;
   top        : 0;
   width      : 100%;
   height     : 700px;
+  margin-top : 10px;
   background : #0f3d00;
 }
 
@@ -214,9 +213,15 @@ br {
   font-size   : 1.1em;
 }
 
-.history p {
-  color     : white;
-  font-size : 1.25em;
+.history a:link {
+  text-decoration: none;
+  border-bottom   : 1px dotted;
+  font-size       : 1.1em;
+  transition      : .5s;
+}
+
+.history a:hover {
+  border-bottom : 1px solid;
 }
 
 .history a::after {
@@ -227,6 +232,12 @@ br {
   width        : 12px;
   height       : 12px;
   margin-right : 5px;
+}
+
+
+.history p {
+  color     : white;
+  font-size : 1.25em;
 }
 
 .history h2 {
@@ -268,10 +279,6 @@ br {
 
 #about1 a:link {
   color           : #72ff44;
-  border-bottom   : 1px dotted;
-  text-decoration : none;
-  font-size       : 1.1em;
-  transition      : .5s;
 }
 
 #about1 a:visited {
@@ -280,7 +287,6 @@ br {
 
 #about1 a:hover {
   color         : #a8ff8c;
-  border-bottom : 1px solid;
 }
 
 #about1 > p {
@@ -294,12 +300,12 @@ br {
 }
 
 #about1 > p:last-child::first-letter {
-  float: left;
-  margin: 5px 5px 5px 0;
-  padding: 5px 5px;
-  font-size: 2.3em;
-  border: 2px solid;
-  border-right: none;
+  float        : left;
+  margin       : 5px 5px 5px 0;
+  padding      : 5px 5px;
+  border       : 2px solid;
+  border-right : none;
+  font-size    : 2.3em;
 }
 
 #about2 {
@@ -335,8 +341,16 @@ br {
   filter              : contrast(110%) grayscale(75%);
 }
 
-#about2 a {
+#about2 a:link {
   color : #f7fc2a;
+}
+
+#about2 a:visited {
+  color: #f7fc2a;
+}
+
+#about2 a:hover {
+  color: #fffdad;
 }
 
 #about2 > p:first-child {
@@ -480,19 +494,27 @@ br {
   background-position : 20% 33%;
 }
 
-#interval {
+.interval {
   z-index    : 0;
   position   : relative;
   width      : 100%;
   height     : 200px;
   margin     : 10px 0;
-  background : darkblue;
 }
 
-#interval::before {
+.interval::before {
   z-index             : -1;
   content             : "";
   opacity             : .8;
+  background-size     : cover;
+  filter              : contrast(150%) grayscale(75%);
+}
+
+#tiger {
+  background : darkblue;
+}
+
+#tiger::before {
   background          : linear-gradient(
                           300deg,
                           transparent 30%,
@@ -501,9 +523,23 @@ br {
                         url(
                           "../images/background7.jpg"
                         );
-  background-position : 80% 25%;
-  background-size     : cover;
-  filter              : contrast(150%) grayscale(75%);
+  background-position : 50% 25%;
+}
+
+#panther {
+  background : green;
+}
+
+#panther::before {
+  background          : linear-gradient(
+                          300deg,
+                          transparent 30%,
+                          rgba(0,0,0,.5) 90%
+                        ),
+                        url(
+                          "../images/background8.jpg"
+                        );
+  background-position : 50% 30%;
 }
 
 #secondSlide {
@@ -531,26 +567,62 @@ br {
 }
 
 #secondSlide div:first-child {
-  position: absolute;
-  margin: 0 0 0 10%;
-  top: 33%;
-  width: 70%;
+  position : absolute;
+  top      : 33%;
+  width    : 70%;
+  margin   : 0 0 0 10%;
 }
 
 #secondSlide div:first-child > h2 {
-  font-size: 7em;
-  line-height: 100px;
+  font-size   : 7em;
+  line-height : 100px;
 }
 
 #secondSlide div:first-child > p:last-child {
-  width: 66%;
+  width : 66%;
 }
 
 #secondSlide div:first-child > p:last-child::first-letter {
-  float: left;
-  margin: 5px 5px 5px 0;
-  padding: 5px 5px;
-  font-size: 2.5em;
-  border: 2px solid;
-  border-right: none;
+  float        : left;
+  margin       : 5px 5px 5px 0;
+  padding      : 5px 5px;
+  border       : 2px solid;
+  border-right : none;
+  font-size    : 2.5em;
+}
+
+#secondSlide div:first-child > p > a:link {
+  color: #f92a13;
+}
+
+#secondSlide div:first-child > p > a:visited {
+  color: #f92a13;
+}
+
+#secondSlide div:first-child > p > a:hover {
+  color: #ffb5ad;
+}
+
+#thirdSlide {
+  z-index    : 0;
+  position   : relative;
+  width      : 100%;
+  height     : 800px;
+  background : darkblue;
+}
+
+#thirdSlide::before {
+  z-index             : -1;
+  content             : "";
+  opacity             : .7;
+  background          : linear-gradient(
+                          300deg,
+                          transparent 30%,
+                          rgba(0,0,0,.5) 90%
+                        ),
+                        url(
+                          "../images/background4.jpg"
+                        );
+  background-position : 50% 10%;
+  filter              : contrast(150%) grayscale(75%);
 }
