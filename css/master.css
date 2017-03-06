@@ -29,11 +29,11 @@
 }
 
 body {
-  margin              : 0;
-  width: 100%;
-  color               : rgb(200,200,200);
-  background          : black;
-  font-family         : "proxima-nova-soft";
+  width       : 100%;
+  margin      : 0;
+  color       : rgb(200,200,200);
+  background  : black;
+  font-family : "proxima-nova-soft";
 }
 
 #nav-header {
@@ -86,7 +86,7 @@ body {
   transition    : .25s;
 }
 
-#enlist > a:before {
+#enlist > a::before {
   content      : "+";
   width        : 10px;
   height       : 10px;
@@ -105,43 +105,42 @@ body {
 }
 
 #title {
-  position       : relative;
-  width          : 55%;
-  margin         : 200px auto;
-  text-align     : center;
-  text-shadow    : 0 10px 15px rgba(0, 0, 0, 0.5),
-                   0 5px 5px rgba(0, 0, 0, 0.75),
-                   0 3px 0 rgba(0, 0, 0, 0.85);
-  vertical-align : center;
-  font-family    : "headliner";
-  font-size      : 2em;
+  position    : relative;
+  top         : 20%;
+  margin      : auto;
+  text-align  : center;
+  text-shadow : 0 10px 15px rgba(0, 0, 0, 0.5),
+                0 5px 5px rgba(0, 0, 0, 0.75),
+                0 3px 0 rgba(0, 0, 0, 0.85);
+  font-family : "headliner";
+  font-size   : 2em;
 }
 
 #title > h1 {
   margin         : 0;
   color          : white;
   text-transform : uppercase;
-  font-size      : 5em;
+  font-size      : 6em;
+  height: 175px;
 }
 
-#title > span {
-  position       : relative;
-  top            : -25px;
+#title > p {
+  margin         : 0;
   color          : white;
   font-size      : 1.2em;
   letter-spacing : 3px;
 }
 
-#title:before {
+#title::before {
   z-index        : -1;
   content        : "1944";
   position       : absolute;
-  top            : -180px;
+  top            : -250px;
   right          : 0;
   bottom         : 0;
   left           : 0;
   opacity        : .2;
-  font-size      : 17.5em;
+  font-size      : 25em;
   letter-spacing : 10px;
 }
 
@@ -155,7 +154,7 @@ body {
   margin   : 0;
 }
 
-#homescreen:before {
+#homescreen::before {
   z-index             : -1;
   content             : "";
   opacity             : .25;
@@ -175,59 +174,16 @@ body {
 }
 
 #firstSlide {
-  height: 700px;
-  position: relative;
+  position : relative;
+  height   : 700px;
+  z-index    : 3;
+  position   : relative;
+  top        : 0;
+  width      : 100%;
+  background : #0f3d00;
 }
 
-
-.history {
-  z-index          : 1;
-  position         : relative;
-  height           : 800px;
-  margin           : -17px 0;
-  background-color : #ffd54f;
-}
-
-.history a:after {
-  content      : url("../images/link.svg");
-  display      : inline-block;
-  position     : relative;
-  left         : 5px;
-  width        : 12px;
-  height       : 12px;
-  margin-right : 5px;
-}
-
-.history h2 {
-  margin      : 0;
-  color       : white;
-  text-align  : center;
-  font-family : "Argent CF";
-  font-size   : 3em;
-}
-
-.history h2:after {
-  content    : "";
-  display    : block;
-  width      : 150px;
-  height     : 3px;
-  margin     : 20px 10% 10px;
-  background : white;
-}
-
-#about1 {
-  float: left;
-  font-size: 1.25em;
-  z-index       : 3;
-  position      : relative;
-  top           : 0;
-  width         : 100%;
-  height        : 700px;
-  padding       : 200px 0;
-  background    : #0f3d00;
-}
-
-#about1:before {
+#firstSlide::before {
   z-index             : -1;
   content             : "";
   opacity             : .8;
@@ -242,6 +198,66 @@ body {
   background-position : left;
   filter              : contrast(150%) grayscale(75%);
 }
+
+.history {
+  z-index          : 1;
+  font-size: 1.1em;
+  position         : relative;
+  font-family : "KlinicSlab-Bold";
+}
+
+.history p {
+  font-size   : 1.25em;
+  color: white;
+}
+
+.history a::after {
+  content      : url("../images/link.svg");
+  display      : inline-block;
+  position     : relative;
+  left         : 5px;
+  width        : 12px;
+  height       : 12px;
+  margin-right : 5px;
+}
+
+.history h2 {
+  margin      : 0;
+  color       : white;
+  font-family : "Argent CF";
+  font-size   : 3em;
+}
+
+.history h2::after {
+  content    : "";
+  display    : block;
+  width      : 150px;
+  height     : 3px;
+  margin     : 20px 0 10px;
+  background : white;
+}
+
+.history > p:first-child {
+  z-index        : 3;
+  width          : 90%;
+  margin         : 0;
+  color          : white;
+  text-transform : uppercase;
+  font-family    : "proxima-nova-soft";
+  font-size      : .9em;
+  letter-spacing : 3px;
+}
+
+#about1 {
+  z-index    : 3;
+  position   : relative;
+  top        : 0;
+  width      : 50%;
+  height     : 700px;
+  float      : left;
+  padding    : 200px 75px 50px;
+}
+
 
 #about1 a:link {
   color           : #72ff44;
@@ -259,56 +275,41 @@ body {
   border-bottom : 1px solid;
 }
 
-#about1 > p:first-child {
-  margin         : 0 10%;
-  text-transform : uppercase;
-  font-family    : "proxima-nova-soft";
-  font-size      : .9em;
-  letter-spacing : 3px;
-}
 
 #about1 > p {
-  width       : 40%;
-  margin      : 15px 10%;
-  color       : white;
+  width       : 100%;
+  margin      : 15px 0;
   text-align  : left;
-  font-family : "KlinicSlab-Bold";
-  font-size   : 1.25em;
 }
 
 #about1 > h2 {
-  margin-left: 5%;
-  width: 50%;
+  text-align: left;
 }
 
 #about2 {
-  height: 883px;
-  position: absolute;
-  right: 15%;
-  font-size: 1.25em;
   z-index    : 5;
+  position   : absolute;
+  right      : 15%;
   width      : 30%;
+  height     : 900px;
   float      : right;
-  padding: 50px 10px;
-  margin-top     : -200px;
-  color      : white;
+  margin-top : -200px;
+  padding    : 50px 10px;
   text-align : center;
+  background-color : #ffdc19;
+  border-radius: 10px 10px 0 0;
 }
 
-#about2:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+#about2::before {
+  border-radius: 10px 10px 0 0;
   z-index             : -1;
   content             : "";
-  opacity             : .7;
+  opacity             : .6;
   background          : linear-gradient(
-                          90deg,
-                          rgba(0,0,0,.3) 0%,
+                          135deg,
+                          rgba(0,0,0,.8) 15%,
                           transparent 50%,
-                          rgba(0,0,0,.3) 100%
+                          rgba(0,0,0,.8) 80%
                         ),
                         url(
                           "../images/background5.jpg"
@@ -322,44 +323,38 @@ body {
   color : #f7fc2a;
 }
 
+#about2 > p:first-child {
+  text-align: right;
+}
+
 #about2 h2 {
   font-size : 3em;
 }
 
-#about2 > h2:after {
-  width : 150px;
-  margin: auto;
+#about2 > h2::after {
+  width  : 150px;
+  margin : 20px auto;
 }
 
 #about2 > ul {
   z-index         : 5;
   position        : relative;
   width           : 85%;
-  margin          : 20px auto;
+  margin          : 50px auto;
   color           : white;
-  text-align      : left;
+  text-align      : center;
   font-family     : "KlinicSlab-Bold";
   font-size       : 1.25em;
-  list-style-type : circle;
+  list-style-type : none;
 }
 
 #about2 > ul > li {
-  margin : 15px 0;
+  margin : 25px 0;
 }
 
-#about2 > p:first-child {
-  z-index        : 3;
-  width          : 90%;
-  margin         : 0;
-  color          : white;
-  text-align     : right;
-  text-transform : uppercase;
-  font-family    : "proxima-nova-soft";
-  font-size      : .9em;
-  letter-spacing : 3px;
-}
 
-.backgroundimg:before {
+
+.backgroundimg::before {
   position : absolute;
   top      : 0;
   right    : 0;
@@ -368,41 +363,41 @@ body {
 }
 
 .triple-header {
-  z-index          : 0;
-  position         : relative;
-  top              : 0;
-  height           : 200px;
+  z-index  : 0;
+  position : relative;
+  top      : 0;
+  height   : 200px;
 }
 
 .triple-header > h2 {
-  margin: 25px auto;
-  letter-spacing: 7px;
-  width: 100%;
-  z-index     : 1;
-  position    : absolute;
-  top         : 0;
-  left        : 0;
-  color       : white;
-  text-align  : center;
-  text-shadow : 0 10px 15px rgba(0, 0, 0, 0.5),
-                0 5px 5px rgba(0, 0, 0, 0.75),
-                0 3px 0 rgba(0, 0, 0, 0.85);
-  font-family : "headliner";
-  font-size   : 10em;
-  line-height : 200px;
+  z-index        : 1;
+  position       : absolute;
+  top            : 0;
+  left           : 0;
+  width          : 100%;
+  margin         : 25px auto;
+  color          : white;
+  text-align     : center;
+  text-shadow    : 0 10px 15px rgba(0, 0, 0, 0.5),
+                   0 5px 5px rgba(0, 0, 0, 0.75),
+                   0 3px 0 rgba(0, 0, 0, 0.85);
+  font-family    : "headliner";
+  font-size      : 10em;
+  line-height    : 200px;
+  letter-spacing : 7px;
 }
 
-.triple-header:before {
-  z-index             : -1;
-  content             : "";
-  opacity             : .8;
-  background-repeat   : no-repeat;
-  background-size     : auto;
-  filter              : contrast(150%) grayscale(75%);
+.triple-header::before {
+  z-index           : -1;
+  content           : "";
+  opacity           : .8;
+  background-repeat : no-repeat;
+  background-size   : auto;
+  filter            : contrast(150%) grayscale(75%);
 }
 
 .grayscale {
-  filter: grayscale(100%);
+  filter : grayscale(100%);
 }
 
 #adapt {
@@ -410,14 +405,21 @@ body {
 }
 
 #adapt h2 {
-  width: 80%;
-  text-align: left;
-  margin-left: 10%;
+  width       : 80%;
+  margin-left : 10%;
+  text-align  : left;
 }
 
-#adapt:before {
-  background-image    : linear-gradient(90deg, black -20%, transparent, black 120%),
-                        url("../images/background7.jpg");
+#adapt::before {
+  background-image    : linear-gradient(
+                          90deg,
+                          black -20%,
+                          transparent,
+                          black 120%
+                        ),
+                        url(
+                          "../images/background7.jpg"
+                        );
   background-position : 90% 25%;
 }
 
@@ -426,30 +428,76 @@ body {
 }
 
 #survive h2 {
-  padding-right: 15%;
+  padding-right : 15%;
 }
 
-#survive:before {
-  background-image    : linear-gradient(90deg, black -20%, transparent, black 120%),
-                        url("../images/background6.jpg");
+#survive::before {
+  background-image    : linear-gradient(
+                          90deg,
+                          black -20%,
+                          transparent,
+                          black 120%
+                        ),
+                        url(
+                          "../images/background6.jpg"
+                        );
   background-position : 80% 33%;
 }
 
 #overcome {
-  background-color: darkgreen;
+  background-color : darkgreen;
 }
 
 #overcome h2 {
-  text-align: right;
-  margin-left: -10%;
+  margin-left : -10%;
+  text-align  : right;
 }
 
-#overcome:before {
-  background-image    : linear-gradient(90deg, black -20%, transparent, black 120%),
-                        url("../images/background8.jpg");
+#overcome::before {
+  background-image    : linear-gradient(
+                          90deg,
+                          black -20%,
+                          transparent,
+                          black 120%
+                        ),
+                        url(
+                          "../images/background8.jpg"
+                        );
   background-position : 20% 33%;
 }
 
-.separator {
+#secondSlide {
+  z-index: 0;
   height: 800px;
+  width: 100%;
+  position: relative;
+  background: darkred;
+}
+
+#secondSlide::before {
+    z-index             : -1;
+    content             : "";
+    opacity             : .8;
+    background          : linear-gradient(
+                            300deg,
+                            transparent 30%,
+                            rgba(0,0,0,.5) 90%
+                          ),
+                          url(
+                            "../images/background6.jpg"
+                          );
+    background-position : left;
+    filter              : contrast(150%) grayscale(75%);
+  }
+}
+
+#goals {
+  position: relative;
+  right: 0;
+  margin: auto;
+  width: 10%;
+}
+
+#goals h2 {
+  font-size: 5em;
 }
