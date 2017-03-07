@@ -37,7 +37,7 @@ body {
 
 br {
   display : block;
-  margin  : 10px 0;
+  margin-bottom: 10px;
 }
 
 #nav-header {
@@ -118,13 +118,13 @@ br {
                 0 5px 5px rgba(0, 0, 0, 0.75),
                 0 3px 0 rgba(0, 0, 0, 0.85);
   font-family : "headliner";
-  font-size   : 2em;
+  font-size   : 3em;
   transform   : translate(-50%, -50%);
 }
 
 #title > h1 {
-  height         : 175px;
-  margin         : 0;
+  height         : 250px;
+  margin         : 20px;
   color          : white;
   text-transform : uppercase;
   font-size      : 6em;
@@ -137,26 +137,9 @@ br {
   letter-spacing : 3px;
 }
 
-#title::before {
-  z-index        : -1;
-  content        : "1944";
-  position       : absolute;
-  top            : -250px;
-  right          : 0;
-  bottom         : 0;
-  left           : 0;
-  opacity        : .2;
-  font-size      : 25em;
-  letter-spacing : 10px;
-  transform      : translate(-25%, -15%);
-}
-
 #homescreen {
+  width: auto;
   position : relative;
-  top      : 0;
-  right    : 0;
-  bottom   : 0;
-  left     : 0;
   height   : 1200px;
   margin   : 0;
 }
@@ -178,6 +161,20 @@ br {
   background-position : top;
   background-size     : cover;
   filter              : contrast(125%) grayscale(85%);
+}
+
+#homescreen::after {
+  font-family: "headliner";
+  line-height: 0px;
+  transform: translateX(-50%);
+  z-index        : -1;
+  content        : "1944";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  opacity        : .2;
+  font-size      : 60em;
+  letter-spacing : 30px;
 }
 
 #firstSlide {
@@ -203,6 +200,8 @@ br {
                           "../images/background3.jpg"
                         );
   background-position : left;
+  background-repeat: no-repeat;
+  background-size: cover;
   filter              : contrast(150%) grayscale(75%);
 }
 
@@ -238,6 +237,7 @@ br {
 .history p {
   color     : white;
   font-size : 1.25em;
+  margin-bottom: 20px;
 }
 
 .history h2 {
@@ -299,13 +299,14 @@ br {
   text-align : left;
 }
 
-#about1 > p:last-child::first-letter {
+#about1 > p:nth-child(3)::first-letter {
   float        : left;
-  margin       : 5px 5px 5px 0;
-  padding      : 5px 5px;
+  margin       : 0 5px 0 0;
+  padding      : 0 0 0 5px;
   border       : 2px solid;
-  border-right : none;
-  font-size    : 2.3em;
+  border-bottom: none;
+  border-right: none;
+  font-size    : 2em;
 }
 
 #about2 {
@@ -524,6 +525,8 @@ br {
                           "../images/background7.jpg"
                         );
   background-position : 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #panther {
@@ -540,6 +543,8 @@ br {
                           "../images/background8.jpg"
                         );
   background-position : 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #secondSlide {
@@ -563,6 +568,8 @@ br {
                           "../images/background6.jpg"
                         );
   background-position : left;
+  background-repeat: no-repeat;
+  background-size: cover;
   filter              : contrast(150%) grayscale(75%);
 }
 
@@ -582,13 +589,14 @@ br {
   width : 66%;
 }
 
-#secondSlide div:first-child > p:last-child::first-letter {
+#secondSlide div:first-child > p:nth-child(3)::first-letter {
   float        : left;
-  margin       : 5px 5px 5px 0;
-  padding      : 5px 5px;
+  margin       : 0 5px 0 0;
+  padding      : 0 0 0 5px;
   border       : 2px solid;
-  border-right : none;
-  font-size    : 2.5em;
+  border-bottom: none;
+  border-right: none;
+  font-size    : 2em;
 }
 
 #secondSlide div:first-child > p > a:link {
@@ -624,5 +632,7 @@ br {
                           "../images/background4.jpg"
                         );
   background-position : 50% 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
   filter              : contrast(150%) grayscale(75%);
 }
