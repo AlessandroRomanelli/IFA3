@@ -17,6 +17,7 @@ $(document).ready(function() {
 	setTimeout(function(){
 		$('body').addClass('loaded');
 		$(document).scrollTop(0);
+		$("#loadingHint").fadeOut();
 		clearInterval(colorGenerator);
 	}, 3000);
 });
