@@ -36,13 +36,13 @@
 }
 
 body {
-  position: absolute;
-  top: -20px;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  position    : absolute;
+  top         : -20px;
+  right       : 0;
+  bottom      : 0;
+  left        : 0;
+  width       : 100%;
+  height      : 100%;
   color       : rgb(200,200,200);
   background  : black;
   font-family : "proxima-nova-soft";
@@ -71,7 +71,7 @@ body {
   border-radius     : 50%;
   -webkit-animation : spin 2s linear infinite;
   animation         : spin 2s linear infinite;
-  transition: .75s;
+  transition        : .75s;
   /* Chrome, Opera 15+, Safari 5+ */
   /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -224,16 +224,16 @@ body {
 }
 
 #loadingHint {
-  z-index: 1001;
-  position: absolute;
-  font-size: 3em;
-  opacity: .1;
-  top: 50%;
-  left: 50%;
-  color: rgb(150,150,150);
-  transform: translate(-50%, -50%);
-  font-family: "proxima-nova-soft";
-  text-transform: uppercase;
+  z-index        : 1001;
+  position       : absolute;
+  top            : 50%;
+  left           : 50%;
+  color          : rgb(150,150,150);
+  opacity        : .1;
+  text-transform : uppercase;
+  font-family    : "proxima-nova-soft";
+  font-size      : 1.5em;
+  transform      : translate(-50%, -50%);
 }
 
 #nav-header {
@@ -691,8 +691,6 @@ body {
   width : 50%;
 }
 
-
-
 #secondSlide div:first-child > p:nth-child(3)::first-letter {
   float         : left;
   margin        : 0 5px 0 0;
@@ -758,7 +756,7 @@ body {
 }
 
 #thirdSlide div:first-child > p:last-of-type {
-  width: 60%;
+  width : 60%;
 }
 
 #thirdSlide div:first-child > p:nth-child(3)::first-letter {
@@ -784,42 +782,41 @@ body {
 }
 
 #thirdSlide ul {
-  margin-top: 50px;
+  margin-top : 50px;
 }
 
 #thirdSlide li {
-  width: 75%;
-  margin: 20px 0 0 100px;
-  text-align: left;
-  list-style: circle;
-  font-family: "KlinicSlab-Bold";
-  font-size: 1.25em;
-  color: white;
+  width       : 75%;
+  margin      : 20px 0 0 100px;
+  color       : white;
+  text-align  : left;
+  font-family : "KlinicSlab-Bold";
+  font-size   : 1.25em;
+  list-style  : circle;
 }
 
 #thirdSlide li:last-child {
-  margin-top: 50px;
+  margin-top : 50px;
 }
-
 
 #thirdSlide button {
-  display: inline;
-  position: relative;
-  top: 0;
-  left: 25%;
-  transform: translateX(-50%);
-  color: white;
-  padding: 20px 50px;
-  font-size: 1.1em;
-  text-transform: uppercase;
-  text-align: center;
+  display        : inline;
+  position       : relative;
+  top            : 0;
+  left           : 25%;
+  padding        : 20px 50px;
+  color          : white;
+  border         : 2px solid rgb(200,200,200);
+  border-radius  : 50px;
+  text-align     : center;
+  text-transform : uppercase;
   font-family    : "proxima-nova-soft";
-  border        : 2px solid rgb(200,200,200);
-  border-radius : 50px;
-  transition    : .25s;
+  font-size      : 1.1em;
+  transform      : translateX(-50%);
+  transition     : .25s;
 }
 
-#thirdSlide  button::before {
+#thirdSlide button::before {
   content      : "+";
   margin-right : 10px;
   font-size    : 1.2em;
@@ -827,6 +824,6 @@ body {
 }
 
 #thirdSlide button:hover {
+  color            : #00002a;
   background-color : rgb(200,200,200);
-  color : #00002a;
 }
