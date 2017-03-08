@@ -224,14 +224,16 @@ body {
 }
 
 #loadingHint {
-  z-index: 1200;
+  z-index: 1001;
   position: absolute;
-  top: 70%;
+  top: 66%;
   left: 50%;
   color: rgb(150,150,150);
   transform: translate(-50%, -50%);
   font-family: "proxima-nova-soft";
   text-transform: uppercase;
+  font-size: 1.5em;
+  opacity: .1;
 }
 
 #nav-header {
@@ -907,7 +909,7 @@ body {
   width        : 10px;
   height       : 10px;
   margin-right : 5px;
-  font-size    : 1.3em;
+  font-size    : 1em;
   font-weight  : bold;
   line-height  : 21px;
 }
