@@ -811,7 +811,7 @@ body {
   z-index    : 0;
   position   : relative;
   width      : 100%;
-  height     : 800px;
+  height     : 1200px;
   background : darkblue;
 }
 
@@ -831,4 +831,88 @@ body {
   background-position : 50% 10%;
   background-size     : cover;
   filter              : contrast(150%) grayscale(75%);
+}
+
+#thirdSlide div:first-child {
+  position : relative;
+  top      : 10%;
+  width    : 80%;
+  margin   : 0 0 0 10%;
+}
+
+#thirdSlide div:first-child > h2 {
+  font-size   : 6em;
+  line-height : 100px;
+}
+
+#thirdSlide div:first-child > p:not(first-child) {
+  width : 60%;
+}
+
+#thirdSlide div:first-child > p:nth-child(3)::first-letter {
+  float         : left;
+  margin        : 0 5px 0 0;
+  padding       : 0 0 0 5px;
+  border        : 2px solid;
+  border-right  : none;
+  border-bottom : none;
+  font-size     : 2em;
+}
+
+#thirdSlide div:first-child a:link {
+  color : #0f69ff;
+}
+
+#thirdSlide div:first-child a:visited {
+  color : #0f69ff;
+}
+
+#thirdSlide div:first-child a:hover {
+  color : #bfd7ff;
+}
+
+#thirdSlide ul {
+  margin-top: 50px;
+}
+
+#thirdSlide li {
+  width: 75%;
+  margin: 20px 0 0 100px;
+  text-align: left;
+  list-style: none;
+  font-family: "KlinicSlab-Bold";
+  font-size: 1.25em;
+  color: white;
+}
+
+#thirdSlide li:last-child {
+  margin: 50px auto;
+  width: 40%;
+}
+
+#thirdSlide button {
+  color: white;
+  padding: 20px 50px;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  font-family    : "proxima-nova-soft";
+  border        : 2px solid rgb(200,200,200);
+  border-radius : 50px;
+  transition    : .25s;
+}
+
+#thirdSlide  button::before {
+  content      : "+";
+  width        : 10px;
+  height       : 10px;
+  margin-right : 5px;
+  font-size    : 1.3em;
+  font-weight  : bold;
+  line-height  : 21px;
+}
+
+#thirdSlide button:hover {
+  background-color : rgb(200,200,200);
+  color : rgb(60, 60, 60);
 }
