@@ -226,7 +226,7 @@ body {
 #loadingHint {
   z-index: 1200;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   color: rgb(150,150,150);
   transform: translate(-50%, -50%);
@@ -318,7 +318,7 @@ body {
 }
 
 #title > h1 {
-  height         : 250px;
+  height         : 300px;
   margin         : 20px;
   color          : white;
   text-transform : uppercase;
