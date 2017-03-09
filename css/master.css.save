@@ -26,6 +26,13 @@
 
 * {
   box-sizing     : border-box;
+  margin         : 0;
+  padding        : 0;
+  border         : 0;
+  background     : transparent;
+  outline        : 0;
+  vertical-align : baseline;
+  font-size      : 100%;
 }
 
 body {
@@ -299,9 +306,9 @@ body {
 
 #title {
   position    : absolute;
-  top         : 45%;
+  top         : 50%;
   left        : 50%;
-  width       : 100%;
+  width       : 90%;
   margin      : auto;
   text-align  : center;
   text-shadow : 0 10px 15px rgba(0, 0, 0, 0.5),
@@ -313,35 +320,24 @@ body {
 }
 
 #title > h1 {
-  display: inline-block;
-  height: 300px;
-  line-height: 400px;
+  height         : 300px;
+  margin         : 20px;
   color          : white;
   text-transform : uppercase;
   font-size      : 6em;
-  letter-spacing: 10px;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
 }
 
 #title > p {
-  display: inline-block;
-  margin         : 20px;
+  margin         : 0;
   color          : white;
   font-size      : 1.2em;
   letter-spacing : 3px;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
 }
 
 #homescreen {
   position : relative;
   width    : auto;
-  height   : 1200px;
+  height   : 1100px;
   margin   : 0;
 }
 
@@ -368,7 +364,7 @@ body {
   z-index        : -1;
   content        : "1944";
   position       : absolute;
-  top            : 50%;
+  top            : 40%;
   left           : 50%;
   width          : 100%;
   opacity        : .2;
@@ -416,7 +412,7 @@ body {
 }
 
 .container a:link {
-  border-bottom   : 2px dotted;
+  border-bottom   : 1px dotted;
   text-decoration : none;
   font-size       : 1.1em;
   transition      : .5s;
@@ -514,12 +510,12 @@ body {
 #about2 {
   z-index          : 5;
   position         : absolute;
-  right            : 10%;
-  width            : 35%;
-  height           : 850px;
+  right            : 15%;
+  width            : 30%;
+  height           : 925px;
   float            : right;
   margin-top       : -100px;
-  padding          : 50px 10px 20px;
+  padding          : 50px 10px;
   border-radius    : 10px;
   background-color : #ffdc19;
   text-align       : center;
@@ -560,13 +556,8 @@ body {
   text-align : right;
 }
 
-#about2 * {
-  width: 90%;
-}
-
 #about2 h2 {
-  margin: 0 auto;
-  font-size : 2.3em;
+  font-size : 3em;
 }
 
 #about2 > h2::after {
@@ -577,9 +568,8 @@ body {
 #about2 > ul {
   z-index         : 5;
   position        : relative;
-  width           : 80%;
-  margin          : 50px auto 0;
-  padding: 0;
+  width           : 85%;
+  margin          : 50px auto;
   color           : white;
   text-align      : left;
   font-family     : "KlinicSlab-Bold";
@@ -588,7 +578,7 @@ body {
 }
 
 #about2 > ul > li {
-  margin : 40px 0;
+  margin : 30px 0;
 }
 
 .backgroundimg::before {
@@ -614,13 +604,13 @@ body {
 .interval::before {
   z-index         : -1;
   content         : "";
-  opacity         : .7;
+  opacity         : .8;
   background-size : cover;
-  filter          : contrast(150%) grayscale(90%);
+  filter          : contrast(150%) grayscale(75%);
 }
 
 #tiger {
-  background : black;
+  background : darkblue;
 }
 
 #tiger::before {
@@ -638,7 +628,7 @@ body {
 }
 
 #panther {
-  background : black;
+  background : green;
 }
 
 #panther::before {
@@ -812,11 +802,11 @@ body {
 #thirdSlide button {
   display        : inline;
   position       : relative;
-  top            : 5px;
+  top            : 0;
   left           : 25%;
   padding        : 20px 50px;
   color          : white;
-  border         : 5px solid rgb(200,200,200);
+  border         : 2px solid rgb(200,200,200);
   border-radius  : 50px;
   text-align     : center;
   text-transform : uppercase;
@@ -824,17 +814,23 @@ body {
   font-size      : 1.1em;
   transform      : translateX(-50%);
   transition     : .25s;
-  background-color: transparent;
 }
 
 #thirdSlide button::before {
   content      : "+";
+<<<<<<< HEAD
+  width        : 10px;
+  height       : 10px;
+  margin-right : 5px;
+  font-size    : 1em;
+=======
   margin-right : 10px;
   font-size    : 1.2em;
+>>>>>>> 0dc68c1b422da1bf7fc797423d74a9569c05cceb
   font-weight  : bold;
 }
 
 #thirdSlide button:hover {
-  color            : #00002a;
+  color           : #00002a;
   background-color : rgb(200,200,200);
 }
