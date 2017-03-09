@@ -60,7 +60,10 @@
 									$('#back2top').removeClass('move-right').addClass('move-left');
 							};
 					};
-					lastScrollTop = st;
+					if (st < 600) {
+						$('#back2top').removeClass('move-left').addClass('move-right');
+					}
+ 					lastScrollTop = st;
 				};
 
 				setInterval(function() {
