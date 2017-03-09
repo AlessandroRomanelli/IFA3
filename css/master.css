@@ -327,7 +327,6 @@ body {
 }
 
 #title > p {
-  display: inline-block;
   margin         : 20px;
   color          : white;
   font-size      : 1.2em;
@@ -336,6 +335,15 @@ body {
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+}
+
+#title > p::before {
+  content    : "";
+  display    : block;
+  width      : 50%;
+  height     : 5px;
+  margin     : 20px auto 10px;
+  background : darkred;
 }
 
 #homescreen {
@@ -368,7 +376,7 @@ body {
   z-index        : -1;
   content        : "1944";
   position       : absolute;
-  top            : 50%;
+  top            : 40%;
   left           : 50%;
   width          : 100%;
   opacity        : .2;
