@@ -8,15 +8,15 @@
   </head>
   <body>
     <div id="homescreen" class="backgroundimg">
-        <div id="nav-header">
+        <div id="nav-header" class="top">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Learn more</a></li>
-            <li><a href="#">Media</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Partners</a></li>
-            <li id="enlist"><a href="#">Join the team</a></li>
-            <li><a href="#">Downloads</a></li>
+            <li><a data-scroll href="#">Home</a></li>
+            <li><a data-scroll href="#">Learn more</a></li>
+            <li><a data-scroll href="#">Media</a></li>
+            <li><a data-scroll href="#">Community</a></li>
+            <li><a data-scroll href="#">Partners</a></li>
+            <li id="enlist"><a data-scroll href="#">Join the team</a></li>
+            <li><a data-scroll href="#">Downloads</a></li>
           </ul>
         </div>
 
@@ -28,7 +28,7 @@
 
     <div id="loader-wrapper">
         <div id="loader"></div>
-        <div id="loadingHint"><p>ifa3</p></div>
+        <div id="loadingHint" class="pulsate"><p>ifa3</p></div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
@@ -89,7 +89,7 @@
             <li>Give us a detailed feedback, report any issue you have encountered or tell us how you'd like the game to be!</li>
             <li>Join our <a href="#">Discord server</a> for support, discussions or just to have a chat</li>
             <li>Create new missions or new content (reskins/weapons/vehicles/new terrains), or make the game more realistic by tweaking it</li>
-            <li>Or contribute directly to the development of the mod by: <button type="button" name="button">Joining the team</button></li>
+            <li>Or contribute directly to the development of the mod by: <button data-scroll type="button" name="button">Joining the team</button></li>
           </ul>
         </div>
       </div>
@@ -98,9 +98,15 @@
 
     <footer>
     </footer>
-    <script src="scripts/vendor/jquery-3.1.1.min.js" charset="utf-8"></script>
-    <script src="scripts/vendor/modernizr-2.6.2.min.js" charset="utf-8"></script>
-    </script>
+    <script src="vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script src="vendors/modernizr-2.6.2.min.js" charset="utf-8"></script>
+    <script src="vendors/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="scripts/animation.js" charset="utf-8"></script>
+    <script>
+      smoothScroll.init({
+        speed: 1500,
+        easing: "easeInOutQuad"
+      });
+    </script>
   </body>
 </html>

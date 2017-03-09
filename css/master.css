@@ -25,10 +25,12 @@
 }
 
 * {
-  box-sizing     : border-box;
+  box-sizing : border-box;
 }
 
 body {
+  overflow-y: scroll;
+  overflow-x: hidden;
   position    : absolute;
   top         : -20px;
   right       : 0;
@@ -39,6 +41,27 @@ body {
   color       : rgb(200,200,200);
   background  : black;
   font-family : "proxima-nova-soft";
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(175,175,175);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.75);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4);
 }
 
 #loader-wrapper {
@@ -77,7 +100,7 @@ body {
   bottom            : 5px;
   left              : 5px;
   border            : 7px solid transparent;
-  border-top-color  : white;
+  border-top-color  : gray;
   border-radius     : 50%;
   -webkit-animation : spin 3s linear infinite;
   animation         : spin 3s linear infinite;
@@ -93,7 +116,7 @@ body {
   bottom            : 15px;
   left              : 15px;
   border            : 7px solid transparent;
-  border-top-color  : grey;
+  border-top-color  : white;
   border-radius     : 50%;
   -webkit-animation : spin 1.5s linear infinite;
   animation         : spin 1.5s linear infinite;
@@ -216,29 +239,88 @@ body {
   color : #222222;
 }
 
+.pulsate {
+  opacity                           : 0.5;
+  -webkit-animation                 : pulsate 2s ease-out;
+  -webkit-animation-iteration-count : infinite;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    opacity : .1;
+  }
+
+  50% {
+    opacity : .5;
+  }
+
+  100% {
+    opacity : .1;
+  }
+}
+
 #loadingHint {
   z-index        : 1001;
   position       : absolute;
   top            : 50%;
   left           : 50%;
   color          : rgb(150,150,150);
-  opacity        : .1;
   text-transform : uppercase;
-  font-family    : "proxima-nova-soft";
-  font-size      : 1.5em;
+  font-family    : "headliner";
+  font-size      : 2.5em;
   transform      : translate(-50%, -50%);
 }
 
-#nav-header {
-  position      : relative;
-  top           : 50px;
-  width         : 100%;
-  height        : 50px;
-  padding-right : 50px;
-  text-align    : right;
+.nav-right {
+  transform : translateX(100%);
 }
 
-#nav-header a:link {
+.pinned {
+  border: 2px solid rgb(50,50,50);
+  background: linear-gradient(black -20%,
+                              rgb(180,180,180) 20%,
+                              rgb(180,180,180) 80%,
+                              black 120%);
+}
+
+.pinned > li:nth-last-child(2) {
+  border-color: rgb(50,50,50) !important;
+}
+
+.pinned > li:nth-last-child(2):hover {
+  background: rgb(50,50,50) !important;
+}
+
+.pinned > li:nth-last-child(2):hover a {
+  color: rgb(180,180,180) !important;
+  text-shadow : 0 0 10px rgba(255,255,255,.5);
+}
+
+.pinned > li > a:link {
+  color: rgb(50,50,50) !important;
+}
+
+.pinned > li > a:visited {
+  color: rgb(50,50,50) !important;
+}
+
+.pinned > li > a:hover {
+  color: black !important;
+  text-shadow : 0 0 10px rgba(0,0,0,.5);
+}
+
+#nav-header {
+  z-index    : 999;
+  display    : inline-block;
+  position   : absolute;
+  top        : 50px;
+  right      : 0;
+  height     : 50px;
+  text-align : right;
+  transition : .25s ease-in-out;
+}
+
+.top a:link {
   color           : rgb(200,200,200);
   outline         : 0;
   text-decoration : none;
@@ -246,22 +328,30 @@ body {
   transition      : .25s;
 }
 
-#nav-header a:visited {
+.top a:visited {
   color : rgb(200,200,200);
 }
 
-#nav-header a:hover {
+.top a:hover {
   color       : white;
   text-shadow : 0 0 10px rgba(255,255,255,.5);
 }
 
 #nav-header > ul {
+  box-sizing: content-box;
+  height      : 50px;
+  margin      : 0;
+  padding     : 0;
+  padding     : 5px 50px;
   line-height : 50px;
+  transition : .25s ease-in-out;
+  border-radius: 50px 0 0 50px;
 }
 
 #nav-header > ul > li {
   display        : inline-block;
   text-transform : uppercase;
+  line-height    : 50px;
   letter-spacing : 2px;
 }
 
@@ -274,6 +364,7 @@ body {
 }
 
 #enlist {
+  height: 50px;
   border        : 2px solid rgb(200,200,200);
   border-radius : 25px;
   transition    : .25s;
@@ -313,28 +404,24 @@ body {
 }
 
 #title > h1 {
-  display: inline-block;
-  height: 300px;
-  line-height: 400px;
-  color          : white;
-  text-transform : uppercase;
-  font-size      : 6em;
-  letter-spacing: 10px;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
+  display               : inline-block;
+  height                : 300px;
+  -webkit-margin-before : 0;
+  -webkit-margin-after  : 0;
+  color                 : white;
+  text-transform        : uppercase;
+  font-size             : 6em;
+  line-height           : 400px;
+  letter-spacing        : 10px;
 }
 
 #title > p {
-  margin         : 20px;
-  color          : white;
-  font-size      : 1.2em;
-  letter-spacing : 3px;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
+  margin                : 20px;
+  -webkit-margin-before : 0;
+  -webkit-margin-after  : 0;
+  color                 : white;
+  font-size             : 1.2em;
+  letter-spacing        : 3px;
 }
 
 #title > p::before {
@@ -528,16 +615,16 @@ body {
   float            : right;
   margin-top       : -100px;
   padding          : 50px 10px 20px;
-  border-radius    : 10px;
-  background-color : #ffdc19;
+  border-radius    : 20px;
+  background-color : #ffe900;
   text-align       : center;
 }
 
 #about2::before {
   z-index             : -1;
   content             : "";
-  opacity             : .6;
-  border-radius       : 10px;
+  opacity             : .75;
+  border-radius       : 20px;
   background          : linear-gradient(
                           135deg,
                           rgba(0,0,0,.8) 15%,
@@ -569,11 +656,11 @@ body {
 }
 
 #about2 * {
-  width: 90%;
+  width : 90%;
 }
 
 #about2 h2 {
-  margin: 0 auto;
+  margin    : 0 auto;
   font-size : 2.3em;
 }
 
@@ -587,7 +674,7 @@ body {
   position        : relative;
   width           : 80%;
   margin          : 50px auto 0;
-  padding: 0;
+  padding         : 0;
   color           : white;
   text-align      : left;
   font-family     : "KlinicSlab-Bold";
@@ -597,6 +684,12 @@ body {
 
 #about2 > ul > li {
   margin : 40px 0;
+}
+
+#about2 > ul > li:before {
+  content: "\25D6";
+  color: #fdffd8;
+  text-shadow: -2px 2px 10px #ffe900 ;
 }
 
 .backgroundimg::before {
@@ -736,17 +829,18 @@ body {
   position   : relative;
   width      : 100%;
   height     : 1200px;
-  background : darkblue;
+  background : #010044;
 }
 
 #thirdSlide::before {
   z-index             : -1;
   content             : "";
-  opacity             : .85;
+  opacity             : .65;
   background          : linear-gradient(
                           300deg,
-                          transparent 30%,
-                          rgba(0,0,0,.5) 90%
+                          rgba(0,0,0,.8) 10%,
+                          transparent 50%,
+                          rgba(0,0,0,.66) 90%
                         ),
                         url(
                           "../images/background4.jpg"
@@ -814,25 +908,25 @@ body {
 }
 
 #thirdSlide li:last-child {
-  margin-top : 50px;
+  margin-top : 25px;
 }
 
 #thirdSlide button {
-  display        : inline;
-  position       : relative;
-  top            : 5px;
-  left           : 25%;
-  padding        : 20px 50px;
-  color          : white;
-  border         : 5px solid rgb(200,200,200);
-  border-radius  : 50px;
-  text-align     : center;
-  text-transform : uppercase;
-  font-family    : "proxima-nova-soft";
-  font-size      : 1.1em;
-  transform      : translateX(-50%);
-  transition     : .25s;
-  background-color: transparent;
+  display          : inline;
+  position         : relative;
+  top              : 5px;
+  left             : 25%;
+  padding          : 20px 50px;
+  color            : white;
+  border           : 3px solid rgb(200,200,200);
+  border-radius    : 50px;
+  background-color : transparent;
+  text-align       : center;
+  text-transform   : uppercase;
+  font-family      : "proxima-nova-soft";
+  font-size        : 1.1em;
+  transform        : translateX(-50%);
+  transition       : .25s;
 }
 
 #thirdSlide button::before {
