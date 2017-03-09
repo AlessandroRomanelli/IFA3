@@ -1,7 +1,8 @@
 !function (){
 	document.body.style.overflow = 'hidden';
 	//Changing colors in the loader
-	var myColors = ["darkred", "yellow", "darkblue", "darkgreen"];
+	//               RED 				YELLOW 			BLUE			GREEN
+	var myColors = ["cc3939", "#fff67a", "#4482ff", "#3f8e33"];
 	//Getting a random color from above color array
 	function randomColor() {
 			//Random number for index
