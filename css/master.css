@@ -36,13 +36,13 @@
 }
 
 body {
-  position: absolute;
-  top: -20px;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  position    : absolute;
+  top         : -20px;
+  right       : 0;
+  bottom      : 0;
+  left        : 0;
+  width       : 100%;
+  height      : 100%;
   color       : rgb(200,200,200);
   background  : black;
   font-family : "proxima-nova-soft";
@@ -71,7 +71,7 @@ body {
   border-radius     : 50%;
   -webkit-animation : spin 2s linear infinite;
   animation         : spin 2s linear infinite;
-  transition: .75s;
+  transition        : .75s;
   /* Chrome, Opera 15+, Safari 5+ */
   /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -224,16 +224,16 @@ body {
 }
 
 #loadingHint {
-  z-index: 1001;
-  position: absolute;
-  top: 66%;
-  left: 50%;
-  color: rgb(150,150,150);
-  transform: translate(-50%, -50%);
-  font-family: "proxima-nova-soft";
-  text-transform: uppercase;
-  font-size: 1.5em;
-  opacity: .1;
+  z-index        : 1001;
+  position       : absolute;
+  top            : 50%;
+  left           : 50%;
+  color          : rgb(150,150,150);
+  opacity        : .1;
+  text-transform : uppercase;
+  font-family    : "proxima-nova-soft";
+  font-size      : 1.5em;
+  transform      : translate(-50%, -50%);
 }
 
 #nav-header {
@@ -337,7 +337,7 @@ body {
 #homescreen {
   position : relative;
   width    : auto;
-  height   : 1000px;
+  height   : 1100px;
   margin   : 0;
 }
 
@@ -364,7 +364,7 @@ body {
   z-index        : -1;
   content        : "1944";
   position       : absolute;
-  top            : 55%;
+  top            : 40%;
   left           : 50%;
   width          : 100%;
   opacity        : .2;
@@ -512,7 +512,7 @@ body {
   position         : absolute;
   right            : 15%;
   width            : 30%;
-  height           : 875px;
+  height           : 925px;
   float            : right;
   margin-top       : -100px;
   padding          : 50px 10px;
@@ -589,108 +589,8 @@ body {
   left     : 0;
 }
 
-.triple-header {
-  z-index  : 0;
-  position : relative;
-  top      : 0;
-  height   : 200px;
-}
-
-.triple-header > h2 {
-  z-index        : 1;
-  position       : absolute;
-  top            : 0;
-  left           : 0;
-  width          : 100%;
-  margin         : 25px auto;
-  color          : white;
-  text-align     : center;
-  text-shadow    : 0 10px 15px rgba(0, 0, 0, 0.5),
-                   0 5px 5px rgba(0, 0, 0, 0.75),
-                   0 3px 0 rgba(0, 0, 0, 0.85);
-  font-family    : "headliner";
-  font-size      : 10em;
-  line-height    : 200px;
-  letter-spacing : 7px;
-}
-
-.triple-header::before {
-  z-index           : -1;
-  content           : "";
-  opacity           : .8;
-  background-repeat : no-repeat;
-  background-size   : auto;
-  filter            : contrast(150%) grayscale(75%);
-}
-
 .grayscale {
   filter : grayscale(100%);
-}
-
-#adapt {
-  background-color : darkblue;
-}
-
-#adapt h2 {
-  width       : 80%;
-  margin-left : 10%;
-  text-align  : left;
-}
-
-#adapt::before {
-  background-image    : linear-gradient(
-                          90deg,
-                          black -20%,
-                          transparent,
-                          black 120%
-                        ),
-                        url(
-                          "../images/background7.jpg"
-                        );
-  background-position : 90% 25%;
-}
-
-#survive {
-  background-color : darkred;
-}
-
-#survive h2 {
-  padding-right : 15%;
-}
-
-#survive::before {
-  background-image    : linear-gradient(
-                          90deg,
-                          black -20%,
-                          transparent,
-                          black 120%
-                        ),
-                        url(
-                          "../images/background6.jpg"
-                        );
-  background-position : 80% 33%;
-}
-
-#overcome {
-  background-color : darkgreen;
-}
-
-#overcome h2 {
-  margin-left : -10%;
-  text-align  : right;
-}
-
-#overcome::before {
-  background-image    : linear-gradient(
-                          90deg,
-                          black -20%,
-                          transparent,
-                          black 120%
-                        ),
-                        url(
-                          "../images/background8.jpg"
-                        );
-  background-position : 20% 33%;
 }
 
 .interval {
@@ -774,7 +674,7 @@ body {
 #secondSlide div:first-child {
   position : absolute;
   top      : 33%;
-  width    : 70%;
+  width    : 80%;
   margin   : 0 0 0 10%;
 }
 
@@ -783,8 +683,12 @@ body {
   line-height : 100px;
 }
 
-#secondSlide div:first-child > p:last-child {
+#secondSlide div:first-child > p:nth-child(n+3) {
   width : 66%;
+}
+
+#secondSlide div:first-child > p:last-child {
+  width : 50%;
 }
 
 #secondSlide div:first-child > p:nth-child(3)::first-letter {
@@ -848,6 +752,10 @@ body {
 }
 
 #thirdSlide div:first-child > p:not(first-child) {
+  width : 70%;
+}
+
+#thirdSlide div:first-child > p:last-of-type {
   width : 60%;
 }
 
@@ -874,47 +782,48 @@ body {
 }
 
 #thirdSlide ul {
-  margin-top: 50px;
+  margin-top : 50px;
 }
 
 #thirdSlide li {
-  width: 75%;
-  margin: 20px 0 0 100px;
-  text-align: left;
-  list-style: none;
-  font-family: "KlinicSlab-Bold";
-  font-size: 1.25em;
-  color: white;
+  width       : 75%;
+  margin      : 20px 0 0 100px;
+  color       : white;
+  text-align  : left;
+  font-family : "KlinicSlab-Bold";
+  font-size   : 1.25em;
+  list-style  : circle;
 }
 
 #thirdSlide li:last-child {
-  margin: 50px auto;
-  width: 40%;
+  margin-top : 50px;
 }
 
 #thirdSlide button {
-  color: white;
-  padding: 20px 50px;
-  font-size: 2em;
-  text-transform: uppercase;
-  text-align: center;
+  display        : inline;
+  position       : relative;
+  top            : 0;
+  left           : 25%;
+  padding        : 20px 50px;
+  color          : white;
+  border         : 2px solid rgb(200,200,200);
+  border-radius  : 50px;
+  text-align     : center;
+  text-transform : uppercase;
   font-family    : "proxima-nova-soft";
-  border        : 2px solid rgb(200,200,200);
-  border-radius : 50px;
-  transition    : .25s;
+  font-size      : 1.1em;
+  transform      : translateX(-50%);
+  transition     : .25s;
 }
 
-#thirdSlide  button::before {
+#thirdSlide button::before {
   content      : "+";
-  width        : 10px;
-  height       : 10px;
-  margin-right : 5px;
-  font-size    : 1em;
+  margin-right : 10px;
+  font-size    : 1.2em;
   font-weight  : bold;
-  line-height  : 21px;
 }
 
 #thirdSlide button:hover {
+  color            : #00002a;
   background-color : rgb(200,200,200);
-  color : rgb(60, 60, 60);
 }
