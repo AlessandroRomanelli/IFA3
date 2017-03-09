@@ -271,42 +271,46 @@ body {
   transform      : translate(-50%, -50%);
 }
 
-.nav-right {
-  transform : translateX(100%);
+#homescreen {
+  position : relative;
+  width    : auto;
+  height   : 1200px;
+  margin   : 0;
 }
 
-.pinned {
-  border: 2px solid rgb(50,50,50);
-  background: linear-gradient(black -20%,
-                              rgb(180,180,180) 20%,
-                              rgb(180,180,180) 80%,
-                              black 120%);
+#homescreen::before {
+  z-index             : -1;
+  content             : "";
+  opacity             : .25;
+  background          : linear-gradient(
+                          315deg,
+                          rgba(255,255,255,.5) -15%,
+                          transparent 50%,
+                          rgba(0,0,0,.2) 80%
+                        ),
+                        url(
+                          "../images/background2.jpg"
+                        );
+  background-repeat   : no-repeat;
+  background-position : top;
+  background-size     : cover;
+  filter              : contrast(125%) grayscale(85%);
 }
 
-.pinned > li:nth-last-child(2) {
-  border-color: rgb(50,50,50) !important;
-}
-
-.pinned > li:nth-last-child(2):hover {
-  background: rgb(50,50,50) !important;
-}
-
-.pinned > li:nth-last-child(2):hover a {
-  color: rgb(180,180,180) !important;
-  text-shadow : 0 0 10px rgba(255,255,255,.5);
-}
-
-.pinned > li > a:link {
-  color: rgb(50,50,50) !important;
-}
-
-.pinned > li > a:visited {
-  color: rgb(50,50,50) !important;
-}
-
-.pinned > li > a:hover {
-  color: black !important;
-  text-shadow : 0 0 10px rgba(0,0,0,.5);
+#homescreen::after {
+  z-index        : -1;
+  content        : "1944";
+  position       : absolute;
+  top            : 40%;
+  left           : 50%;
+  width          : 100%;
+  opacity        : .2;
+  text-align     : center;
+  font-family    : "headliner";
+  font-size      : 55em;
+  line-height    : 0px;
+  letter-spacing : 30px;
+  transform      : translateX(-50%);
 }
 
 #nav-header {
@@ -434,46 +438,56 @@ body {
   border-radius: 5px;
 }
 
-#homescreen {
-  position : relative;
-  width    : auto;
-  height   : 1200px;
-  margin   : 0;
+#back2top {
+  z-index: 999;
+  position: fixed;
+  top: 30%;
+  right: -200px;
+  width: 200px;
+  height: 50px;
+  background: rgba(0,0,0,.8);
+  border-radius: 20px 0 0 20px;
+  text-transform: uppercase;
+  transition: .5s;
+  color: rgb(200,200,200);
+  opacity: .6;
 }
 
-#homescreen::before {
-  z-index             : -1;
-  content             : "";
-  opacity             : .25;
-  background          : linear-gradient(
-                          315deg,
-                          rgba(255,255,255,.5) -15%,
-                          transparent 50%,
-                          rgba(0,0,0,.2) 80%
-                        ),
-                        url(
-                          "../images/background2.jpg"
-                        );
-  background-repeat   : no-repeat;
-  background-position : top;
-  background-size     : cover;
-  filter              : contrast(125%) grayscale(85%);
+#back2top p {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  line-height: 48px;
 }
 
-#homescreen::after {
-  z-index        : -1;
-  content        : "1944";
-  position       : absolute;
-  top            : 40%;
-  left           : 50%;
-  width          : 100%;
-  opacity        : .2;
-  text-align     : center;
-  font-family    : "headliner";
-  font-size      : 55em;
-  line-height    : 0px;
-  letter-spacing : 30px;
-  transform      : translateX(-50%);
+#back2top p::before {
+  content: "\21E1";
+  position: relative;
+  margin-right: 5px;
+  top: 3px;
+  font-size: 2em;
+  text-align: right;
+}
+
+#back2top p::after {
+  content: "\21E1";
+  position: relative;
+  margin-left: 5px;
+  top: 3px;
+  font-size: 2em;
+  text-align: left;
+}
+
+#back2top:hover {
+  color: white;
+  opacity: .9;
+}
+
+.move-left {
+  transform: translateX(-200px);
 }
 
 #firstSlide {

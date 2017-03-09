@@ -35,7 +35,7 @@
 				var didScroll;
 				var lastScrollTop = 0;
 				var delta = 5;
-				var navbarHeight = $("#nav-header").outerHeight();
+				var navbarHeight = $("#back2top").outerHeight();
 
 				//When user scrolls
 				$(window).scroll(function(event){
@@ -53,23 +53,15 @@
 					// If it's scrolling up
 					if (st > lastScrollTop && st > navbarHeight){
 							// Scroll right, Hide
-							$('#nav-header').removeClass('nav-left').addClass('nav-right');
+							$('#back2top').removeClass('move-left').addClass('move-right');
 					} else {
 							// Scroll left, show
 							if(st + $(window).height() < $(document).height()) {
-									$('#nav-header').css("position", "fixed");
-									$('#nav-header').removeClass('nav-right').addClass('nav-left');
+									$('#back2top').removeClass('move-right').addClass('move-left');
 							};
 					};
 					lastScrollTop = st;
-					setTimeout(function(){
-						if (lastScrollTop !== 0) {
-							$('#nav-header ul').addClass('pinned');
-						} else {
-							$('#nav-header ul').removeClass('pinned');
-						};
-					}, 500);
-				}
+				};
 
 				setInterval(function() {
 					if (didScroll) {
