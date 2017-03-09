@@ -624,7 +624,7 @@ body {
 #about2::before {
   z-index             : -1;
   content             : "";
-  opacity             : .75;
+  opacity             : .9;
   border-radius       : 20px;
   background          : linear-gradient(
                           135deg,
@@ -635,7 +635,7 @@ body {
                         url(
                           "../images/background5.jpg"
                         );
-  background-position : 80% 40%;
+  background-position : 75% 0%;
   background-size     : auto;
   filter              : contrast(110%) grayscale(75%);
 }
