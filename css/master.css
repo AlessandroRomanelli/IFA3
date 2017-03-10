@@ -484,19 +484,23 @@ body {
 }
 
 #back2top p::before {
-  content      : "";
-  margin-right : 17px;
+  position: relative;
+  top: 5px;
+  right: -5px;
+  content      : "\21E1";
+  text-align   : right;
+  font-size    : 2em;
+  line-height  : 0px;
+  transition   : .2s ease-in-out;
+  opacity: 0;
 }
 
 #back2top p:hover::before {
   content      : "\21E1";
   position     : relative;
   top          : 5px;
-  margin-right : 5px;
-  text-align   : right;
-  font-size    : 2em;
-  line-height  : 0px;
-  transition   : .2s;
+  right: 5px;
+  opacity: 1;
 }
 
 #back2top:hover {
