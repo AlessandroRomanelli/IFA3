@@ -52,7 +52,7 @@
 					//Quit
 						return;
 					// If it's scrolling up
-					if (st > lastScrollTop && st > navbarHeight){
+					if (st > lastScrollTop && st > navbarHeight && st < 3000){
 							// Scroll right, Hide
 							$('#back2top').removeClass('move-left').addClass('move-right');
 					} else {
@@ -63,6 +63,9 @@
 					};
 					if (st < 600) {
 						$('#back2top').removeClass('move-left').addClass('move-right');
+					}
+					if (st > 2800) {
+						$('#back2top').removeClass('move-right').addClass('move-left');
 					}
  					lastScrollTop = st;
 				};
