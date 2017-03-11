@@ -1,4 +1,5 @@
 !function (){
+	//Hiding the scroll bar during loading
 	document.body.style.overflow = 'hidden';
 	//Changing colors in the loader
 	//               RED 				YELLOW 			BLUE			GREEN
@@ -29,7 +30,6 @@
 			$("#loadingHint").fadeOut();
 			//Stop the code from changing color
 			clearInterval(colorGenerator);
-			document.body.style.overflowY = 'visible';
 
 			//Sticky header
 			!function stickyHeader(){
@@ -77,6 +77,19 @@
 					}
 				}, 250);
 			}();
+
+			setTimeout(function () {
+				$("#title h1").removeClass("hidden");
+				setTimeout(function () {
+					$("#title p").removeClass("hidden scrolled-up");
+					setTimeout(function () {
+						$("#nav-header").removeClass("hidden");
+						setTimeout(function () {
+							document.body.style.overflowY = 'visible';
+						}, 2000);
+					}, 750);
+				}, 1500);
+			}, 1000);
 
 		}, 3000);
 	});
