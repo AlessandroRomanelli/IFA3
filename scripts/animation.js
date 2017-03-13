@@ -1,12 +1,12 @@
 !function (){
-	myStorage = localStorage
-	window.onload = function () {
+	myStorage = localStorage;
+	$(document).ready(function () {
 		if (myStorage.getItem("hasCodeRunBefore") === null) {
 			$("#title h1").hide();
 			$("#title p").hide();
 			$("#nav-header").hide();
 		}
-	}
+	});
 	//Hiding the scroll bar during loading
 	document.body.style.overflow = 'hidden';
 	//Changing colors in the loader
