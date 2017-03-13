@@ -80,6 +80,7 @@
 			$("#loadingHint").hide();
 			clearInterval(colorGenerator);
 			stickyHeader();
+			document.body.style.overflowY = 'visible';
 		} else {
 			//Wait 3seconds (fake loading)
 			setTimeout(function(){
