@@ -50,6 +50,10 @@ body {
   font-family : "proxima-nova-soft";
 }
 
+a {
+   outline: 0;
+}
+
 ::-webkit-scrollbar {
   width : 10px;
 }
