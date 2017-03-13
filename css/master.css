@@ -1185,6 +1185,10 @@ li {
     color : #a8ff8c;
   }
 
+  #about2 a::before {
+    background-color : #a8ff8c;
+  }
+
   #thirdSlide div:first-child {
     left : 50%;
   }
