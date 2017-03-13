@@ -1,4 +1,12 @@
 !function (){
+	myStorage = localStorage
+	window.onload = function () {
+		if (myStorage.getItem("hasCodeRunBefore") === null) {
+			$("#title h1").hide();
+			$("#title p").hide();
+			$("#nav-header").hide();
+		}
+	}
 	//Hiding the scroll bar during loading
 	document.body.style.overflow = 'hidden';
 	//Changing colors in the loader
@@ -78,19 +86,21 @@
 				}, 250);
 			}();
 
-			setTimeout(function () {
-				$("#title h1").removeClass("hidden");
+			if (myStorage.getItem("hasCodeRunBefore") === null) {
 				setTimeout(function () {
-					$("#title p").removeClass("hidden scrolled-up");
+					$("#title h1").fadeIn(2000);
+					$("#nav-header").fadeIn(5000);
 					setTimeout(function () {
-						$("#nav-header").removeClass("hidden");
-						setTimeout(function () {
-							document.body.style.overflowY = 'visible';
-						}, 2000);
-					}, 750);
-				}, 1500);
-			}, 1000);
-
+						$("#title p").slideDown(500);
+							setTimeout(function () {
+								document.body.style.overflowY = 'visible';
+								myStorage.setItem("hasCodeRunBefore", true);
+							}, 1000);
+						}, 2500);
+					}, 1000);
+				} else {
+					document.body.style.overflowY = 'visible';
+				}
 		}, 3000);
 	});
 }();
