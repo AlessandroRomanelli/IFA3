@@ -29,6 +29,11 @@
   outline    : none;
 }
 
+html {
+  width  : 100%;
+  height : 100%;
+}
+
 body {
   position    : absolute;
   top         : -20px;
@@ -36,7 +41,8 @@ body {
   bottom      : 0;
   left        : 0;
   width       : 100%;
-  height      : 100%;
+  min-width   : 100%;
+  min-height  : 100%;
   color       : rgb(200,200,200);
   overflow-x  : hidden;
   overflow-y  : scroll;
@@ -332,14 +338,15 @@ body {
   z-index        : -1;
   content        : "1944";
   position       : absolute;
-  top            : 40%;
+  top            : 5%;
   left           : 50%;
-  width          : 100%;
+  width          : 1375px;
+  height         : 800px;
   opacity        : .1;
   text-align     : center;
   font-family    : "headliner";
   font-size      : 55em;
-  line-height    : 0px;
+  line-height    : 800px;
   letter-spacing : 50px;
   transform      : translateX(-50%);
 }
@@ -352,7 +359,6 @@ body {
   right      : 0;
   height     : 50px;
   text-align : right;
-  transition : 2s ease-in-out;
 }
 
 .hidden {
@@ -470,7 +476,6 @@ body {
   font-size             : 6em;
   line-height           : 300px;
   letter-spacing        : 10px;
-  transition            : 5s;
 }
 
 #title > p {
@@ -482,12 +487,6 @@ body {
   color                 : white;
   font-size             : 1.2em;
   letter-spacing        : 3px;
-  transition            : 2.5s;
-}
-
-.scrolled-up {
-  position : relative;
-  top      : -100px;
 }
 
 #title > p::before {
@@ -561,13 +560,13 @@ body {
   width      : 100%;
   height     : 700px;
   margin-top : 10px;
-  background : #0f3d00;
+  background : #0b2b00;
 }
 
 #firstSlide::before {
   z-index             : -1;
   content             : "";
-  opacity             : .8;
+  opacity             : .85;
   background          : linear-gradient(
                           300deg,
                           transparent 30%,
@@ -689,13 +688,14 @@ li {
 }
 
 #about1 {
-  z-index  : 3;
-  position : relative;
-  top      : 0;
-  width    : 50%;
-  height   : 700px;
-  float    : left;
-  padding  : 200px 0 50px 10%;
+  z-index   : 3;
+  position  : absolute;
+  top       : 66%;
+  left      : 33%;
+  width     : 45%;
+  height    : 700px;
+  float     : left;
+  transform : translate(-50%, -50%);
 }
 
 #about1 a:link {
@@ -715,7 +715,7 @@ li {
 }
 
 #about1 > p {
-  width      : 100%;
+  width      : 90%;
   margin     : 35px 0 0;
   text-align : left;
 }
@@ -739,19 +739,19 @@ li {
   position         : absolute;
   right            : 10%;
   width            : 35%;
-  height           : 850px;
+  height           : 825px;
   float            : right;
   margin-top       : -100px;
   padding          : 50px 10px 20px;
   border-radius    : 20px;
-  background-color : #ffe900;
+  background-color : #3d3900;
   text-align       : center;
 }
 
 #about2::before {
   z-index             : -1;
   content             : "";
-  opacity             : .9;
+  opacity             : .85;
   border-radius       : 20px;
   background          : linear-gradient(
                           135deg,
@@ -804,7 +804,7 @@ li {
 #about2 > ul {
   z-index         : 5;
   position        : relative;
-  width           : 80%;
+  width           : 90%;
   margin          : 50px auto 0;
   padding         : 0;
   color           : white;
@@ -815,13 +815,12 @@ li {
 }
 
 #about2 > ul > li {
-  margin : 40px 0;
+  margin : 40px auto;
 }
 
 #about2 > ul > li:before {
   content      : "\25E2";
   margin-right : 5px;
-  color        : #fdffd8;
 }
 
 .backgroundimg::before {
@@ -893,7 +892,7 @@ li {
   position   : relative;
   width      : 100%;
   height     : 800px;
-  background : darkred;
+  background : #4c0000;
 }
 
 #secondSlide::before {
@@ -915,10 +914,11 @@ li {
 }
 
 #secondSlide div:first-child {
-  position : absolute;
-  top      : 33%;
-  width    : 80%;
-  margin   : 0 0 0 10%;
+  position  : absolute;
+  top       : 50%;
+  left      : 50%;
+  width     : 80%;
+  transform : translate(-50%, -50%);
 }
 
 #secondSlide div:first-child > h2 {
@@ -927,11 +927,11 @@ li {
 }
 
 #secondSlide div:first-child > p:nth-child(n+3) {
-  width : 66%;
+  width : 70%;
 }
 
 #secondSlide div:first-child > p:last-child {
-  width : 50%;
+  width : 65%;
 }
 
 #secondSlide div:first-child > p:nth-child(3)::first-letter {
@@ -965,13 +965,13 @@ li {
   position   : relative;
   width      : 100%;
   height     : 1200px;
-  background : #053c75;
+  background : #0a2d5a;
 }
 
 #thirdSlide::before {
   z-index             : -1;
   content             : "";
-  opacity             : .65;
+  opacity             : .85;
   background          : linear-gradient(
                           300deg,
                           rgba(0,0,0,.8) -10%,
@@ -988,10 +988,11 @@ li {
 }
 
 #thirdSlide div:first-child {
-  position : relative;
-  top      : 10%;
-  width    : 80%;
-  margin   : 0 0 0 10%;
+  position  : absolute;
+  top       : 50%;
+  left      : 50%;
+  width     : 80%;
+  transform : translate(-50%, -50%);
 }
 
 #thirdSlide div:first-child > h2 {
@@ -1096,4 +1097,278 @@ li {
   top      : 4px;
   left     : 10px;
   opacity  : 1;
+}
+
+@media screen
+       and (max-width : 1850px) {
+  #about2 {
+    right : 5%;
+    width : 650px;
+  }
+}
+
+@media screen
+       and (max-width : 1700px) {
+ #title > p::before {
+       width: 60%;
+ }
+
+  #about1 {
+    width : 900px;
+  }
+
+  #about2 {
+    right         : 0;
+    border-radius : 20px 0 0 20px;
+  }
+
+  #about2::before {
+    border-radius : 20px 0 0 20px;
+  }
+
+  #secondSlide div:first-child {
+    width : 1350px;
+  }
+
+  #thirdSlide div:first-child {
+    left  : 55%;
+    width : 90%;
+  }
+}
+
+@media screen
+       and (max-width : 1525px) {
+  .interval {
+    height : 200px;
+  }
+
+  #about1 {
+    left  : 30%;
+    width : 50%;
+    float : none;
+  }
+
+  #about1 h2 {
+    font-size : 2.75em;
+  }
+
+  #about2 {
+    height           : auto;
+    float            : none;
+    margin-top       : 0;
+    border-left      : 1px dashed rgba(255,255,255, .1);
+    border-radius    : 0;
+    background-color : transparent;
+  }
+
+  #about2 > ul > li {
+    margin : 20px 0 0 0;
+  }
+
+  #about2::before {
+    content : none;
+  }
+
+  #about2 a:link {
+    color : #72ff44;
+  }
+
+  #about2 a:visited {
+    color : #72ff44;
+  }
+
+  #about2 a:hover {
+    color : #a8ff8c;
+  }
+
+  #thirdSlide div:first-child {
+    left : 50%;
+  }
+}
+
+@media screen
+       and (max-width : 1450px) {
+
+  #title > p::before {
+        width: 55%;
+        margin: 0 auto 5px;
+  }
+
+  #title > h1 {
+    height: 285px;
+  }
+
+  #firstSlide {
+    height : 1000px;
+  }
+
+  #about1 {
+    position : relative;
+    top      : 45%;
+    left     : 50%;
+    width    : 80%;
+  }
+
+  #about2 {
+    position   : absolute;
+    top        : 47%;
+    left       : 10%;
+    width      : 90%;
+    padding    : 0;
+    border     : none;
+    text-align : left;
+  }
+
+  #about2 > h2,
+  #about2 > ul {
+    margin : 0;
+  }
+
+  #about2 > h2::after {
+    margin : 20px 0 0;
+  }
+
+  #about2 > p:first-child {
+    text-align : left;
+  }
+
+  #homescreen {
+    height    : 900px;
+    margin    : 0 0 -25px 0;
+    font-size : .8em;
+  }
+
+  #nav-header {
+    font-size : 1rem;
+  }
+
+  #homescreen::after {
+    top   : 0;
+    width : 1125px;
+  }
+
+  #title {
+    top : 45%;
+  }
+
+  #secondSlide {
+    height : 600px;
+  }
+
+  #secondSlide div:first-child {
+    left      : 55%;
+    width     : 90%;
+    margin    : auto;
+    font-size : .9em;
+  }
+
+  #thirdSlide {
+    height : 1000px;
+  }
+
+  #thirdSlide div:first-child {
+    left      : 55%;
+    width     : 90%;
+    margin    : auto;
+    font-size : .9em;
+  }
+}
+
+@media screen
+       and (max-width : 1350px) {
+  #secondSlide div:first-child > h2,
+  #thirdSlide div:first-child > h2 {
+    font-size : 5em;
+  }
+}
+
+@media screen
+       and (max-width : 1250px) {
+  #homescreen {
+    font-size : .6em;
+  }
+
+  #title > h1 {
+    height: 250px;
+  }
+
+  #nav-header {
+    width      : 100%;
+    text-align : center;
+    font-size  : .8rem;
+  }
+
+  #nav-header ul {
+    padding : 5px 10px;
+  }
+
+  #homescreen::after {
+    width : 880px;
+  }
+
+  #about1 {
+    top : 40%;
+  }
+
+  #firstSlide,
+  #thirdSlide {
+    height : 1100px;
+  }
+}
+
+@media screen
+       and (max-width : 1024px) {
+  #thirdSlide li:last-child {
+    margin-top : 0;
+  }
+
+  #thirdSlide button {
+    left : 33%;
+  }
+}
+
+@media screen
+       and (min-width : 1921px) {
+  #about1 {
+    width : 915px;
+  }
+
+  #about2 {
+    right : 15%;
+    width : 700px;
+  }
+
+  #secondSlide div:first-child {
+    width : 1530px;
+  }
+}
+
+@media screen
+       and (min-width : 2500px) {
+  #about1 {
+    left : 35%;
+  }
+
+  #about2 {
+    right : 20%;
+  }
+
+  #thirdSlide div:first-child {
+    left : 60%;
+  }
+
+  #nav-header {
+    right : 15%;
+  }
+}
+
+@media (min-width: 1921px)
+       and (max-width : 2150px) {
+  #about1 {
+    width : 45%;
+  }
+
+  #about2 {
+    right : 12.5%;
+  }
 }
