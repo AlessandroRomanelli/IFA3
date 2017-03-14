@@ -608,7 +608,8 @@ li {
 
 .container a:link {
   text-decoration : none;
-  font-size       : 1.1em;
+  transform: perspective(1px) scale(1.1);
+  font-size: 1.1em;
   transition      : .5s;
 }
 
@@ -621,8 +622,8 @@ li {
   width              : 100%;
   height             : 2px;
   background-color   : unset;
-  -webkit-transform  : scaleX(0);
-  transform          : scaleX(0);
+  -webkit-transform  : perspective(1px) scaleX(0);
+  transform          : perspective(1px) scaleX(0);
   -webkit-transition : all 0.3s ease-in-out 0s;
   transition         : all 0.3s ease-in-out 0s;
 }
@@ -636,15 +637,15 @@ li {
   height       : 15px;
   margin-right : 5px;
   opacity      : 0;
-  transition   : .25s;
+  transition   : .3s ease-in-out;
 }
 
 .container a:hover {}
 
 .container a:hover:before {
   visibility        : visible;
-  -webkit-transform : scaleX(1);
-  transform         : scaleX(1);
+  -webkit-transform : perspective(1px) scaleX(1);
+  transform         : perspective(1px) scaleX(1);
 }
 
 .container a:hover::after {
